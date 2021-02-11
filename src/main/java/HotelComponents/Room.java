@@ -18,4 +18,8 @@ public abstract class Room {
         return this.roomType.getCapacity();
     }
 
+    public ArrayList<Guest> getGuests(){
+        return this.guests;
+    }
+
 }
