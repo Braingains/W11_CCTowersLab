@@ -4,15 +4,11 @@ public class ConferenceRoom extends Room {
 
     private RoomType roomType;
 
-    public ConferenceRoom(RoomType roomType, ArrayList<Guest> guests){
-        super(roomType, guests);
+    public ConferenceRoom(RoomType roomType){
+        super(roomType);
     }
 
-    public RoomType getName() {
-        return this.roomType;
-    }
-
-    public int getCapacity (){
-        return this.roomType.getCapacity();
-    }
+//    public String getName() {
+//        return this.roomType.toString();
+//    }
 }

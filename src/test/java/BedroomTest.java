@@ -11,11 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class BedroomTest {
 
     Bedroom bedroom;
-    ArrayList<Guest> guests;
+    Guest guest;
 
     @Before
     public void before(){
-        bedroom = new Bedroom(RoomType.SINGLE, guests, 42069);
+        bedroom = new Bedroom(RoomType.SINGLE, 42069);
+        guest = new Guest("Ewan");
     }
 
     @Test
@@ -23,16 +24,17 @@ public class BedroomTest {
         assertEquals(1, bedroom.getCapacity());
     }
     @Test
-    public void hasGuests(){
-        assertEquals(null, bedroom.getGuests());
+    public void canAddGuest(){
+        bedroom.addGuest(guest);
+        assertEquals(1, bedroom.getNumberOfGuests());
     }
-//    @Test
-//    public void hasRoomNumber(){
-//        assertEquals(42069, bedroom.getRoomNumber());
-//    }
-//    @Test
-//    public void hasRoomType(){
-//        assertEquals("SINGLE", bedroom.getRoomType());
-//    }
+    @Test
+    public void hasRoomNumber(){
+        assertEquals(42069, bedroom.getRoomNumber());
+    }
+    @Test
+    public void hasRoomType(){
+        assertEquals(RoomType.SINGLE, bedroom.getRoomType());
+    }
 
 }
