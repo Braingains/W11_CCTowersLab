@@ -1,3 +1,5 @@
+package HotelComponents;
+
 public class Guest {
 
     private String name;
